@@ -1,0 +1,137 @@
+.footer__section {
+    @include sectionPaddings($ptop: 60px, $pbottom: 60px);
+    background-color: $hero-color;
+}
+
+.footer__box {
+    @include centeredFlex($ai: baseline);
+}
+
+
+.address__list {
+    font-weight: normal;
+    font-style: $font-style;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    list-style-type: none;
+
+    margin-bottom: 9px
+}
+
+.address__place {
+   color: $background-color;
+    font-style: $font-style;
+}
+.address__link {
+   color: $footer-link-color;
+   text-decoration: none;
+
+   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.join__box {
+    margin-left: 70px;
+    padding: 0;
+}
+
+.join__title,
+.newsletter__title {
+    display: block;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    color: $background-color;
+}
+
+.footer-social__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-basis: calc((100% - 30) / 4);
+}
+
+.footer-social__item + .footer-social__item {
+    margin-left: 10px;
+}
+     
+.footer-social__link {
+    @include centeredFlex();
+
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: $footer-icon-color;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-social__link:hover,
+.footer-social__link:focus {
+    background-color: $accent-color;
+}
+
+.footer__icon {
+    fill: $background-color;
+}
+
+.newsletter__box {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.newsletter__form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.newsletter__input {
+    width: 358px;
+    padding: 15px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));   
+    border-radius: 4px;
+    background-color: $hero-color;
+
+    color: $newsletterPlaceholder;
+}
+
+.newsletter__form::placeholder {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1,25;
+    letter-spacing: 0.03em;
+
+    color: $newsletterPlaceholder;
+}
+
+.form__button {
+    @include button();
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1,90;
+    letter-spacing: 0.06em;
+
+    color: $background-color;
+    background: $accent-color;
+    box-shadow: $btn-primary-shadow;
+    
+}
+    
+.newsletter__button {
+    @include centeredFlex();
+    margin-left: 12px;
+    padding: 10px 29px;
+    border: none;
+
+}
+
+.newsletter__icon {
+    margin-left: 10px;
+}

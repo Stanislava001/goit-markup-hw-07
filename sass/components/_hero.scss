@@ -1,0 +1,63 @@
+.hero__section {
+    @include centeredFlex($fd: column);
+    // flex-direction: column;
+
+    width: 100%;
+    height: 600px;
+    max-width: 1600px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    border: 1px solid $secondary-color;
+    background-color: $hero-color;
+    background-image: linear-gradient(
+        to right, 
+        $hero-gradient, 
+        $hero-gradient), 
+        url(../image/background-img.jpg);
+    @include backgroundHero();
+
+    filter: $hero-shadow;
+
+}
+
+.hero__title {
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1,36;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $background-color;
+
+    margin-bottom: 30px;
+    width: 696px;
+}
+
+.button--primary {
+    display: inline-block;
+    padding: 10px 32px;
+    min-width: 200px;
+
+    @include button();
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+
+    color: $background-color;
+    background-color: $accent-color;
+    box-shadow: $btn-primary-shadow;
+
+    border-color: $accent-color;
+    border: 1px solid transparent;
+
+    @include transition(background-color);
+    @include transition(box-shadow);
+   
+    &:hover {
+    background-color: $btn-primary-hover;
+    box-shadow: $btn-primary-shadow;
+}
+}
