@@ -27,10 +27,9 @@
     border-color: $team-section-color;
     box-shadow: none;
 
-    @include transition(background-color);
-    @include transition(color);
-    @include transition(border-color);
-    @include transition(box-shadow);
+    transition-property: background-color, color, border-color, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover, &:focus {
     background-color: $accent-color;
@@ -70,7 +69,7 @@
 .card {
     border: 1px solid $card-border;
     box-sizing: border-box;
-    filter: $hero-shadow;
+
 }
 
 .card__content {
@@ -81,11 +80,13 @@
     display: block;
     text-decoration: none;
 
-    @include transition($property: box-shadow);
-    
+    @include transition(box-shadow);
+ 
     &:hover, &:focus {
-    box-shadow: $card-item-shadow;}
+    box-shadow: $card-item-shadow;
 }
+}
+
 
 .card__title {
     margin-bottom: 4px;
@@ -124,12 +125,14 @@
     
     @include transition(opacity);
     @include transition(transform);
-
-    .filter__link:hover & {
-    opacity: 1;
-    transform: translateY(-100%);}
+  
 }
 
+.filter__link:hover .overlay, 
+.filter__link:focus .overlay {
+    opacity: 1;
+    transform: translateY(-100%);
+}
 
 .overlay__text {
     font-weight: normal;
